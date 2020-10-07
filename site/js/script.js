@@ -26,7 +26,7 @@ const right1 = document.querySelector('.right');
 const rest = document.querySelector('.restOfBG');
 const hambText = document.querySelector('.hambText');
 
-//const tl = new TimelineMax();
+const tl = new TimelineMax();
 tl.fromTo(logo, 1.2, {
     x : "30%",
     opacity :  0
