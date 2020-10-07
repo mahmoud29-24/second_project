@@ -60,7 +60,7 @@ tl.fromTo(rest, 1.2, {
 {
     y : "0%",
     opacity : 1
-});
+}, "-=0.8");
 
 
 function myFunction2() {
