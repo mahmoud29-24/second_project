@@ -179,32 +179,288 @@ main .main ul li span {
   cursor: pointer;
 }
 
-main .main ul li span:hover .rightone {
+main .main ul li span::after {
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 150px;
+  height: 3px;
+  background-color: black;
+  -webkit-transition: 0.5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
+}
+
+main .main ul li span:hover::after {
   width: 0;
 }
 
-main .main .underline {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+@media (min-width: 466px) and (max-width: 914px) {
+  .container-fluid {
+    height: 130vh;
+  }
+  .container-fluid .nav {
+    height: 10vh;
+  }
+  .container-fluid .nav .logo h1 {
+    font-size: 1.5em;
+    height: 10vh;
+  }
+  .container-fluid .nav .middle {
+    display: none;
+  }
+  .container-fluid .nav .right {
+    display: none;
+  }
+  .container-fluid .restOfBG {
+    top: 5%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .container-fluid .restOfBG .text {
+    width: 70%;
+  }
+  .container-fluid .restOfBG .text p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .container-fluid .restOfBG .text h2 {
+    font-size: 1.9em;
+    text-align: center;
+  }
+  .hamb {
+    cursor: pointer;
+    width: 40px;
+    height: 25px;
+    position: fixed;
+    right: 10px;
+    top: 2%;
+    z-index: 105;
+  }
+  .hamb .firstLine {
+    position: fixed;
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    right: 10px;
+    top: 2%;
+    border-radius: 10px;
+  }
+  .hamb .secondLine {
+    position: fixed;
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    right: 10px;
+    top: 4%;
+    border-radius: 10px;
+  }
+  .hamb .thirdLine {
+    position: fixed;
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    right: 10px;
+    top: 6%;
+    border-radius: 10px;
+  }
+  .hambText {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: #723a43;
+    z-index: 102;
+    position: relative;
+    -webkit-animation: hamp 1s ease-in-out;
+            animation: hamp 1s ease-in-out;
+  }
+  .hambText ul {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 210vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
-main .main .underline .leftone {
-  position: absolute;
-  left: 11%;
-  width: 169px;
-  height: 3px;
-  background-color: black;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+main .main {
+  width: 80%;
 }
 
-main .main .underline .rightone {
-  position: absolute;
-  left: 63%;
-  width: 120px;
+main .main h3 {
+  font-size: 1.5em;
+}
+
+main .main p {
+  font-size: 1em;
+}
+
+main .main span {
+  color: black;
+  cursor: pointer;
+}
+
+main .main span::after {
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 150px;
   height: 3px;
   background-color: black;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: 0.5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
+}
+
+main .main span:hover::after {
+  width: 0;
+}
+
+@-webkit-keyframes hamp {
+  from {
+    height: 0;
+    width: 0;
+  }
+  to {
+    height: 210vh;
+    width: 100%;
+  }
+}
+
+@keyframes hamp {
+  from {
+    height: 0;
+    width: 0;
+  }
+  to {
+    height: 210vh;
+    width: 100%;
+  }
+}
+
+@media (min-width: 290px) and (max-width: 464px) {
+  .container-fluid {
+    height: 130vh;
+  }
+  .container-fluid .nav {
+    height: 10vh;
+  }
+  .container-fluid .nav .logo h1 {
+    font-size: 1.5em;
+    height: 10vh;
+  }
+  .container-fluid .nav .middle {
+    display: none;
+  }
+  .container-fluid .nav .right {
+    display: none;
+  }
+  .container-fluid .restOfBG {
+    top: 5%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .container-fluid .restOfBG .text {
+    width: 90%;
+  }
+  .container-fluid .restOfBG .text p {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .container-fluid .restOfBG .text h2 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .hamb {
+    cursor: pointer;
+    width: 40px;
+    height: 25px;
+    position: fixed;
+    right: 10px;
+    top: 2%;
+    z-index: 105;
+  }
+  .hamb .firstLine {
+    position: fixed;
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    right: 10px;
+    top: 2%;
+    border-radius: 10px;
+  }
+  .hamb .secondLine {
+    position: fixed;
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    right: 10px;
+    top: 4%;
+    border-radius: 10px;
+  }
+  .hamb .thirdLine {
+    position: fixed;
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    right: 10px;
+    top: 6%;
+    border-radius: 10px;
+  }
+  .hambText {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: #723a43;
+    z-index: 102;
+    position: relative;
+    -webkit-animation: hamp 1s ease-in-out;
+            animation: hamp 1s ease-in-out;
+  }
+  .hambText ul {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 210vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .main {
+    width: 100%;
+  }
+  main .main h3 {
+    font-size: 1.2em;
+  }
+  main .main p {
+    font-size: 0.75em;
+  }
+  main .main ul li span {
+    font-size: 0.8em;
+  }
+  main .main ul li span::after {
+    content: "";
+    width: 100px;
+    height: 2px;
+  }
+  main .main ul li span:hover::after {
+    width: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

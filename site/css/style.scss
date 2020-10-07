@@ -1,3 +1,13 @@
+@mixin Line($top) {
+        position: fixed;
+        width: 40px;
+        height: 4px;
+        background-color: white;
+        right: 10px;
+        top: $top;
+        border-radius: 10px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -133,29 +143,228 @@ main {
                 span {
                     color: black;
                     cursor: pointer;
-                    &:hover .rightone{
+                    &::after {
+                        content: "";
+                        display: flex;
+                        width: 150px;
+                        height: 3px;
+                        background-color: black;
+                        transition: 0.5s all ease-in-out;
+                    }
+                    &:hover::after {
                         width: 0;
                     }
                 }
             }
         }
-        .underline {
-            justify-content: space-around;
-            .leftone {
-                position: absolute;
-                left: 11%;
-                width: 169px;
-                height: 3px;
-                background-color: black;
-                transition: all 0.5s ease-in-out;
+    }
+}
+
+
+@media (min-width : 466px) and (max-width : 914px) {
+    .container-fluid{
+        height: 130vh;
+        .nav {
+            height: 10vh;
+        .logo {
+            h1 {
+                font-size: 1.5em;
+                height: 10vh;
             }
-            .rightone {
-                position: absolute;
-                left: 63%;
-                width: 120px;
+        }
+        .middle {
+            display: none;
+        }
+        .right {
+            display: none;
+        }
+    }
+        .restOfBG {
+            top: 5%;
+            display: grid;
+            grid-template-columns: 1fr;
+            .text {
+                width: 70%;
+                p {
+                    font-size: 1em;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                    text-align: center;
+                }
+                h2 {
+                    font-size: 1.9em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .hamb {
+        cursor: pointer;
+        width: 40px;
+        height: 25px;
+        position: fixed;
+        right: 10px;
+        top: 2%;
+        z-index: 105;
+        .firstLine {
+            @include Line($top : 2%);
+        }
+        .secondLine{
+           @include Line($top : 4%); 
+        }
+        .thirdLine{
+            @include Line($top : 6%);
+        }
+    }
+    .hambText {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        background-color: #723a43;
+        z-index: 102;
+        position: relative;
+        animation: hamp 1s ease-in-out;
+        ul {
+            justify-content: space-around;
+            display: flex;
+            height: 210vh;
+            flex-direction: column;
+        }
+    }
+}
+
+main {
+    .main {
+        width: 80%;
+        h3 {
+            font-size: 1.5em;
+        }
+        p {
+            font-size: 1em;
+        }
+        span {
+            color: black;
+            cursor: pointer;
+            &::after {
+                content: "";
+                display: flex;
+                width: 150px;
                 height: 3px;
                 background-color: black;
-                transition: all 0.5s ease-in-out;
+                transition: 0.5s all ease-in-out;
+            }
+            &:hover::after {
+                width: 0;
+            }
+        }
+    }
+}
+
+
+@keyframes hamp {
+    from {
+        height: 0;
+        width: 0;
+    }
+    to {
+        height: 210vh;
+        width: 100%;
+    }
+}
+
+@media (min-width : 290px) and (max-width : 464px) {
+    .container-fluid{
+        height: 130vh;
+        .nav {
+            height: 10vh;
+        .logo {
+            h1 {
+                font-size: 1.5em;
+                height: 10vh;
+            }
+        }
+        .middle {
+            display: none;
+        }
+        .right {
+            display: none;
+        }
+    }
+        .restOfBG {
+            top: 5%;
+            display: grid;
+            grid-template-columns: 1fr;
+            .text {
+                width: 90%;
+                p {
+                    font-size: 0.8em;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                    text-align: center;
+                }
+                h2 {
+                    font-size: 1.5em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .hamb {
+        cursor: pointer;
+        width: 40px;
+        height: 25px;
+        position: fixed;
+        right: 10px;
+        top: 2%;
+        z-index: 105;
+        .firstLine {
+            @include Line($top : 2%);
+        }
+        .secondLine{
+           @include Line($top : 4%); 
+        }
+        .thirdLine{
+            @include Line($top : 6%);
+        }
+    }
+    .hambText {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        background-color: #723a43;
+        z-index: 102;
+        position: relative;
+        animation: hamp 1s ease-in-out;
+        ul {
+            justify-content: space-around;
+            display: flex;
+            height: 210vh;
+            flex-direction: column;
+        }
+    }
+    main {
+    .main {
+         width: 100%;
+            h3 {
+                font-size: 1.2em;
+            }
+            p {
+                font-size: 0.75em;
+            }
+            ul {
+                li {
+                    span {
+                        font-size: 0.8em;
+                        &::after {
+                            content: "";
+                            width: 100px;
+                            height: 2px;
+                        }
+                        &:hover::after {
+                            width: 0;
+                        }
+                    } 
+                }
             }
         }
     }

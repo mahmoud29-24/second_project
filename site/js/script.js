@@ -24,8 +24,9 @@ const logo = document.querySelector('.logo');
 const middle = document.querySelector('.middle');
 const right1 = document.querySelector('.right');
 const rest = document.querySelector('.restOfBG');
+const hambText = document.querySelector('.hambText');
 
-const tl = new TimelineMax();
+//const tl = new TimelineMax();
 tl.fromTo(logo, 1.2, {
     x : "30%",
     opacity :  0
@@ -60,3 +61,13 @@ tl.fromTo(rest, 1.2, {
     y : "0%",
     opacity : 1
 });
+
+
+function myFunction2() {
+    var hambText = document.querySelector('.hambText');
+    if (hambText.style.display === "none") {
+        hambText.style.display = "block";
+    }   else {
+        hambText.style.display = "none";
+    }
+}
